@@ -125,7 +125,7 @@ const TestimonialSection = () => {
             Testimonials
           </span>
           
-          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-primary to-primary/70 dark:from-primary-light dark:to-primary mx-auto mt-4 sm:mt-6"></div>
+          <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-primary to-primary/70  mx-auto mt-4 sm:mt-6"></div>
         </motion.div>
 
         <div className="relative" ref={containerRef}>
@@ -138,7 +138,7 @@ const TestimonialSection = () => {
               disabled={!canGoPrev}
               className={`p-2 rounded-full ${
                 canGoPrev 
-                  ? 'bg-white  shadow-md hover:bg-gray-50 dark:hover:bg-secondary text-primary dark:text-primary-light' 
+                  ? 'bg-white  shadow-md hover:bg-gray-50  text-primary ' 
                   : 'bg-gray-100  text-gray-400 cursor-not-allowed'
               } transition-all duration-300`}
             >
@@ -151,7 +151,7 @@ const TestimonialSection = () => {
               disabled={!canGoNext}
               className={`p-2 rounded-full ${
                 canGoNext 
-                  ? 'bg-white  shadow-md hover:bg-gray-50 dark:hover:bg-secondary text-primary dark:text-primary-light' 
+                  ? 'bg-white  shadow-md hover:bg-gray-50  text-primary ' 
                   : 'bg-gray-100  text-gray-400 cursor-not-allowed'
               } transition-all duration-300`}
             >
@@ -185,10 +185,10 @@ const TestimonialSection = () => {
                   style={{ cursor: 'grab' }}
                 >
                   <motion.div 
-                    className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 h-full bg-white dark:bg-gray-200 border border-gray-100 dark:border-gray-700 shadow-lg"
+                    className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 h-full bg-white border border-gray-100  shadow-lg"
                     whileHover={{ boxShadow: "0 10px 15px -3px rgba(79, 70, 229, 0.1), 0 4px 6px -2px rgba(79, 70, 229, 0.05)" }}
                   >
-                    <div className="absolute -top-4 -left-4 opacity-10 dark:opacity-20">
+                    <div className="absolute -top-4 -left-4 opacity-10 ">
                       <Quote size={windowWidth < 640 ? 40 : 60} />
                     </div>
 
@@ -197,7 +197,7 @@ const TestimonialSection = () => {
                         &ldquo;{t.quote}&rdquo;
                       </p>
 
-                      <div className="mt-auto pt-3 sm:pt-4 border-t border-gray-100 dark:border-gray-700">
+                      <div className="mt-auto pt-3 sm:pt-4 border-t border-gray-100 ">
                         <div className="flex items-center">
                           <div className="relative flex-shrink-0">
                             <Image
@@ -205,7 +205,7 @@ const TestimonialSection = () => {
                               height={48}
                               src={'/doc2.jpg'}
                               alt={t.name}
-                              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white dark:border-gray-800 shadow-sm"
+                              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white  shadow-sm"
                               onError={(e) => {
                                 e.target.src = '/api/placeholder/48/48';
                               }}
@@ -213,7 +213,7 @@ const TestimonialSection = () => {
                           </div>
                           <div className="ml-3">
                             <h4 className="font-bold text-sm sm:text-base">{t.name}</h4>
-                            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">{t.username}</p>
+                            <p className="text-gray-600 text-xs sm:text-sm">{t.username}</p>
                           </div>
                         </div>
                       </div>
@@ -237,15 +237,15 @@ const TestimonialSection = () => {
                 <motion.div
                   className={`w-2 h-2 rounded-full ${
                     index === currentIndex 
-                      ? 'bg-primary dark:bg-primary-light' 
-                      : 'bg-gray-300 dark:bg-gray-600'
+                      ? 'bg-white ' 
+                      : 'bg-gray-300 '
                   }`}
                   animate={{ scale: index === currentIndex ? [1, 1.2, 1] : 1 }}
                   transition={{ duration: 1.5, repeat: index === currentIndex ? Infinity : 0, repeatDelay: 1 }}
                 />
                 {index === currentIndex && (
                   <motion.div
-                    className="absolute inset-0 rounded-full bg-primary/30 dark:bg-primary-light/30"
+                    className="absolute inset-0 rounded-full bg-primary/30 "
                     animate={{ scale: [1, 1.8], opacity: [1, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                   />

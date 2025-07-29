@@ -62,8 +62,8 @@ const ContactSection = () => {
             />
             <p className="text-white text-4xl font-bold">Your trusted clinic</p>
             <p className="mt-4">
-              Regístrate y disfruta de todas las ventajas que te ofrecemos,
-              introduce tus platos y empieza la transformación de tu restaurante.
+              Book your consultation today and discover the care and support you
+              deserve.
             </p>
           </div>
         </motion.div>

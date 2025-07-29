@@ -75,6 +75,7 @@ const Footer = () => {
                       key={inx}
                       whileHover={{ scale: 1.1 }}
                       className="transition-transform duration-200"
+                      target="_blank"
                     >
                       {element.value}
                     </motion.a>
@@ -93,18 +94,33 @@ const Footer = () => {
               <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3">
                 {[
-                  "Home",
-                  "About Us",
-                  "Our Services",
-                  "Our Team",
-                  "Contact Us",
+                  {
+                    link: "#",
+                    value: "Home",
+                  },
+                  {
+                    link: "#about",
+                    value: "About Us",
+                  },
+                  {
+                    link: "#services",
+                    value: "Our Services",
+                  },
+                  {
+                    link: "#team",
+                    value: "Our Team",
+                  },
+                  {
+                    link: "#contact",
+                    value: "Contact Us",
+                  },
                 ].map((label, i) => (
                   <li key={i}>
                     <a
-                      href={`#${label.toLowerCase().replace(/\s/g, "")}`}
+                      href={label.link}
                       className="text-gray-200 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1"
                     >
-                      {label}
+                      {label.value}
                     </a>
                   </li>
                 ))}
