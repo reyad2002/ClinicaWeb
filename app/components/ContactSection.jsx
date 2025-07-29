@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -17,18 +18,34 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const { name, email, number, message } = formData;
 
-    if (!formData.name || !formData.email || !formData.message) {
-      alert("Please fill out all fields.");
+    if (!name || !email || !message) {
+      alert("Please fill out all required fields.");
       return;
     }
 
-    // Handle form submission logic here (API call, etc.)
-    console.log("Form submitted:", formData);
-    alert("Message sent!");
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify({ name, email, number, message }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert(data.message || "Message sent successfully!");
+        setFormData({ name: "", email: "", number: "", message: "" });
+      } else {
+        alert(data.error || "Failed to send message.");
+      }
+    } catch (err) {
+      console.error("Error sending message:", err);
+      alert("An unexpected error occurred.");
+    }
   };
 
   return (
@@ -36,7 +53,6 @@ const ContactSection = () => {
       id="contact"
       className="flex py-16 bg-gray-100 relative overflow-hidden"
     >
-      {/* Animated Background */}
       <motion.div
         className="paintBg bg-main rounded-2xl absolute h-full top-0 left-0 lg:left-[-350px] w-[100%] lg:w-[70%] lg:skew-y-[15deg] lg:skew-x-[50deg] z-0"
         initial={{ opacity: 0 }}
@@ -46,7 +62,6 @@ const ContactSection = () => {
       ></motion.div>
 
       <div className="justify-center items-center relative z-10 flex flex-col lg:flex-row m-auto w-[90%] md:w-[80%] lg:w-[80%] gap-8">
-        {/* Left Content */}
         <motion.div
           className="flex-1 text-white z-10"
           initial={{ opacity: 0, x: -50 }}
@@ -68,7 +83,6 @@ const ContactSection = () => {
           </div>
         </motion.div>
 
-        {/* Right Form */}
         <motion.div
           className="flex-1 bg-white p-6 rounded-2xl shadow-2xl w-[100%]"
           initial={{ opacity: 0, y: 50 }}
@@ -120,7 +134,6 @@ const ContactSection = () => {
             <motion.button
               type="submit"
               className="bg-main hover:bg-[#005899] text-white py-2 px-4 rounded transition-colors"
-              // whileHover={{ scale: 1.09 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               Send Message
