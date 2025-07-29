@@ -80,7 +80,7 @@ const TeamSection = () => {
           {team.map((member, idx) => (
             <motion.div
               key={idx}
-              className="bg-white border-2 border-main rounded-2xl overflow-hidden p-5 flex flex-col items-center hover:scale-102 shadow-md transition duration-300 transform hover:bg-main group"
+              className="bg-white border-1 border-main rounded-2xl overflow-hidden p-5 flex flex-col items-center hover:scale-102 shadow-md transition duration-300 transform hover:bg-main group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}

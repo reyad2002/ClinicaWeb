@@ -111,7 +111,7 @@ const Carousel = () => {
           <motion.div
             key={idx}
             whileHover={{ scale: 1.05 }}
-            className="FlotedCard flex items-center justify-center bg-white text-main rounded-3xl border-1 p-2 text-md gap-2"
+            className="FlotedCard flex items-center backdrop-blur-md justify-center bg-[#fdffffdd] text-main rounded-3xl border-1 py-2 px-5 text-md gap-2"
           >
             {item.icon} {item.label}
           </motion.div>

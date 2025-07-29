@@ -32,7 +32,6 @@ const Header = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      
       className="headerCon relative z-50"
     >
       <div
@@ -52,19 +51,19 @@ const Header = () => {
               </a>
             </div>
             <div className="location font-bold">
-              <LocationPinIcon sx={{ color: "#FFD230"  }} />
+              <LocationPinIcon sx={{ color: "#FFD230" }} />
               TheRedSea-Hurghada-Elhadaba
             </div>
           </div>
           <div className="rightInfos flex gap-x-8 ">
             <div className="Language  font-bold cursor-pointer text-secondary transition duration-300 ">
               <GTranslateIcon sx={{ color: "#ffd230" }} />
-              
             </div>
             <ul className="flex gap-5 text-white">
               <li>
                 <a
-                  href=""
+                  href="https://www.facebook.com/profile.php?id=61558122182882&locale=ar_AR"
+                  target="_blank"
                   className="cursor-pointer hover:text-secondary transition duration-300"
                 >
                   <FacebookOutlinedIcon />
@@ -72,7 +71,8 @@ const Header = () => {
               </li>
               <li>
                 <a
-                  href=""
+                  href="https://www.instagram.com/clinica_egypt1?igsh=MmxkbnVvc2xpazI1"
+                  target="_blank"
                   className="cursor-pointer hover:text-secondary transition duration-300"
                 >
                   <InstagramIcon />
@@ -80,7 +80,8 @@ const Header = () => {
               </li>
               <li>
                 <a
-                  href=""
+                  href="https://www.linkedin.com/company/107921665/admin/dashboard/"
+                  target="_blank"
                   className="cursor-pointer hover:text-secondary transition duration-300"
                 >
                   <LinkedInIcon />
