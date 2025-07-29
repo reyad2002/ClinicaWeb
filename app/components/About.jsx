@@ -69,7 +69,7 @@ const About = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-secondary text-black px-4 py-2 rounded hover:bg-secondary transition cursor-pointer"
               >
-                Learn More About Us
+              <a href="#services">Learn More </a>  
               </motion.button>
             </div>
           </motion.div>

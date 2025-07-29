@@ -44,10 +44,10 @@ const Header = () => {
             <div className="gmail">
               <EmailIcon sx={{ color: "#FFD230" }} />{" "}
               <a
-                href="mailto:demo@example.com"
+                href="mailto:info@clinica-egypt.com"
                 className="font-bold hover:text-amber-300 transition duration-300"
               >
-                Clinica@gmail.com
+                info@clinica-egypt.com
               </a>
             </div>
             <div className="location font-bold">
@@ -165,11 +165,11 @@ const Header = () => {
               Login
             </button>
           </Link> */}
-          <Link href="/register">
+          
             <button className="font-bold text-sm register-btn p-1.5 px-3 rounded-3xl bg-main text-white cursor-pointer hover:bg-[#005899] transition-all duration-300">
-              Book Now <LoginIcon sx={{ color: "#ffd230" }} />
+            <a href="#contact">Book Now <LoginIcon sx={{ color: "#ffd230" }} /></a>  
             </button>
-          </Link>
+         
         </div>
       </div>
 

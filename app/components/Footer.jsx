@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -13,16 +13,30 @@ import {
   Linkedin,
   Heart,
   ArrowUp,
-} from 'lucide-react';
+} from "lucide-react";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      link: "https://www.facebook.com/profile.php?id=61558122182882&locale=ar_AR",
+      value: <Facebook />,
+    },
+    {
+      link: "https://www.instagram.com/clinica_egypt1?igsh=MmxkbnVvc2xpazI1",
+      value: <Instagram />,
+    },
+    {
+      link: "https://www.linkedin.com/company/107921665/admin/dashboard/",
+      value: <Linkedin />,
+    },
+  ];
   useEffect(() => {
     // Optionally setup scroll observers
     return () => {};
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -36,7 +50,6 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
             {/* Company Info */}
             <motion.div
               className=""
@@ -49,20 +62,24 @@ const Footer = () => {
                 <h3 className="text-2xl font-bold">Clinica</h3>
               </div>
               <p className="text-gray-200 mb-6 leading-relaxed">
-                Providing exceptional healthcare services with compassion, expertise, and personalized care.
-                Your health and well-being are our top priority.
+                Providing exceptional healthcare services with compassion,
+                expertise, and personalized care. Your health and well-being are
+                our top priority.
               </p>
+
               <div className="flex space-x-4">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, idx) => (
-                  <motion.a
-                    key={idx}
-                    href="#"
-                    whileHover={{ scale: 1.1 }}
-                    className="transition-transform duration-200"
-                  >
-                    <Icon className="h-6 w-6 text-gray-200 hover:text-white" />
-                  </motion.a>
-                ))}
+                {socialLinks.map((element, inx) => {
+                  return (
+                    <motion.a
+                      href={element.link}
+                      key={inx}
+                      whileHover={{ scale: 1.1 }}
+                      className="transition-transform duration-200"
+                    >
+                      {element.value}
+                    </motion.a>
+                  );
+                })}
               </div>
             </motion.div>
 
@@ -75,10 +92,16 @@ const Footer = () => {
             >
               <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
               <ul className="space-y-3">
-                {['Home', 'About Us', 'Our Services', 'Our Team', 'Contact Us'].map((label, i) => (
+                {[
+                  "Home",
+                  "About Us",
+                  "Our Services",
+                  "Our Team",
+                  "Contact Us",
+                ].map((label, i) => (
                   <li key={i}>
                     <a
-                      href={`#${label.toLowerCase().replace(/\s/g, '')}`}
+                      href={`#${label.toLowerCase().replace(/\s/g, "")}`}
                       className="text-gray-200 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1"
                     >
                       {label}
@@ -97,18 +120,22 @@ const Footer = () => {
             >
               <h4 className="text-xl font-semibold mb-6">Our Services</h4>
               <ul className="space-y-3">
-                {['General Consultation', 'Telemedicine', 'Nursing Care', 'Laboratory Services', 'Pharmacy'].map(
-                  (label, i) => (
-                    <li key={i}>
-                      <a
-                        href="#"
-                        className="text-gray-200 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1"
-                      >
-                        {label}
-                      </a>
-                    </li>
-                  )
-                )}
+                {[
+                  "General Consultation",
+                  "Telemedicine",
+                  "Nursing Care",
+                  "Laboratory Services",
+                  "Pharmacy",
+                ].map((label, i) => (
+                  <li key={i}>
+                    <a
+                      href="#"
+                      className="text-gray-200 hover:text-white transition-colors duration-200 inline-block hover:translate-x-1"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </motion.div>
 
@@ -124,25 +151,25 @@ const Footer = () => {
                 {[
                   {
                     icon: <Phone className="h-5 w-5 text-secondary mt-1" />,
-                    label: 'Phone',
-                    value: '+20 100 347 2237',
-                    link: 'tel:+201003472237',
+                    label: "Phone",
+                    value: "+20 1070771668",
+                    link: "tel:+201070771668",
                   },
                   {
                     icon: <Mail className="h-5 w-5 text-secondary mt-1" />,
-                    label: 'Email',
-                    value: 'Clinica@gmail.com',
-                    link: 'mailto:Clinica@gmail.com',
+                    label: "Email",
+                    value: "info@clinica-egypt.com",
+                    link: "mailto:info@clinica-egypt.com",
                   },
                   {
                     icon: <MapPin className="h-5 w-5 text-secondary mt-1" />,
-                    label: 'Address',
-                    value: 'TheRedSea Hurghada Elhadaba',
+                    label: "Address",
+                    value: "TheRedSea Hurghada Elhadaba",
                   },
                   {
                     icon: <Clock className="h-5 w-5 text-secondary mt-1" />,
-                    label: 'Working Hours',
-                    value: '24/7 Available',
+                    label: "Working Hours",
+                    value: "24/7 Available",
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start space-x-3">
@@ -172,14 +199,21 @@ const Footer = () => {
           <div className="container mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-200 text-center md:text-left mb-4 md:mb-0">
-                © 2024 Clinica. All rights reserved. Made with{' '}
-                <Heart className="inline h-4 w-4 text-red-400" /> by Clinica Team
+                © 2024 Clinica. All rights reserved. Made with{" "}
+                <Heart className="inline h-4 w-4 text-red-400" /> by Clinica
+                Team
               </p>
               <div className="flex items-center space-x-6">
-                <a href="#" className="text-gray-200 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-200 hover:text-white transition-colors"
+                >
                   Privacy Policy
                 </a>
-                <a href="#" className="text-gray-200 hover:text-white transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-200 hover:text-white transition-colors"
+                >
                   Terms of Service
                 </a>
                 <motion.button
