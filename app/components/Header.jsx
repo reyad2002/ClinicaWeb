@@ -189,13 +189,13 @@ const Header = () => {
       >
         {/* Close Button */}
         <div className="flex justify-end items-center gap-x-5 p-4">
-          <div className=" bg-secondary p-2 rounded-2xl Language  font-bold cursor-pointer hover:text-gray-800  text-black transition duration-300 ">
+          <div className="  p-2 rounded-2xl Language  font-bold cursor-pointer hover:text-gray-800  text-main transition duration-300 ">
             <GTranslateIcon sx={{ paddingRight: "5px" }} />
             ENG
           </div>
           <button
             onClick={() => setMenu(false)}
-            className="text-2xl font-bold text-black hover:text-gray-800 focus:outline-none transition-all duration-300 cursor-pointer"
+            className="text-2xl font-bold text-main hover:text-gray-800 focus:outline-none transition-all duration-300 cursor-pointer"
             aria-label="Close menu"
           >
             <CancelIcon sx={{ fontSize: "45px" }} />
