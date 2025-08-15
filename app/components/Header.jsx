@@ -35,9 +35,8 @@ const Header = () => {
       className="headerCon relative z-50"
     >
       <div
-        className={`z-50 header-top bg-main backdrop-blur-md   fixed top-0 left-1/2 transform -translate-x-1/2  w-[100%]  ${
-          scroll ? "hidden" : "block"
-        }`}
+        className={`z-50 header-top bg-main backdrop-blur-md   fixed top-0 left-1/2 transform -translate-x-1/2  w-[100%]  ${scroll ? "hidden" : "block"
+          }`}
       >
         <motion.div className="headerTopInner justify-between md:flex hidden  lg:w-[80%] w-[90%] m-auto p-3 ">
           <div className="leftInfos flex text-white gap-x-6">
@@ -52,7 +51,7 @@ const Header = () => {
             </div>
             <div className="location font-bold">
               <LocationPinIcon sx={{ color: "#FFD230" }} />
-              TheRedSea-Hurghada-Elhadaba
+              Red Sea, Hurghada, Elhadaba
             </div>
           </div>
           <div className="rightInfos flex gap-x-8 ">
@@ -92,9 +91,8 @@ const Header = () => {
         </motion.div>
       </div>
       <div
-        className={`z-40 header-inner flex justify-between items-center bg-[#fdffff86] backdrop-blur-md p-3 fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] lg:w-[80%] rounded-4xl border-1 border-main ${
-          scroll ? "top-5 " : "top-5 md:top-15"
-        }`}
+        className={`z-40 header-inner flex justify-between items-center bg-[#fdffff86] backdrop-blur-md p-3 fixed top-5 left-1/2 transform -translate-x-1/2 w-[90%] lg:w-[80%] rounded-4xl border-1 border-main ${scroll ? "top-5 " : "top-5 md:top-15"
+          }`}
       >
         {/* Logo */}
         <div className="header-logo">
@@ -165,27 +163,25 @@ const Header = () => {
               Login
             </button>
           </Link> */}
-          
-            <button className="font-bold text-sm register-btn p-1.5 px-3 rounded-3xl bg-main text-white cursor-pointer hover:bg-[#005899] transition-all duration-300">
-            <a href="#contact">Book Now <LoginIcon sx={{ color: "#ffd230" }} /></a>  
-            </button>
-         
+
+          <button className="font-bold text-sm register-btn p-1.5 px-3 rounded-3xl bg-main text-white cursor-pointer hover:bg-[#005899] transition-all duration-300">
+            <a href="#contact">Book Now <LoginIcon sx={{ color: "#ffd230" }} /></a>
+          </button>
+
         </div>
       </div>
 
       {/* Mobile nav overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-transparent bg-opacity-50 transition-opacity duration-300 ${
-          menu ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
+        className={`fixed inset-0 z-50 bg-transparent bg-opacity-50 transition-opacity duration-300 ${menu ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
         onClick={() => setMenu(false)}
       />
 
       {/* Mobile nav menu */}
       <div
-        className={`fixed top-0 left-0 w-full h-screen z-50 bg-[#fefefe7f] backdrop-blur-sm  transition-transform duration-700 ${
-          menu ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`fixed top-0 left-0 w-full h-screen z-50 bg-[#fefefe7f] backdrop-blur-sm  transition-transform duration-700 ${menu ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         {/* Close Button */}
         <div className="flex justify-end items-center gap-x-5 p-4">

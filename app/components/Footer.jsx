@@ -180,7 +180,7 @@ const Footer = () => {
                   {
                     icon: <MapPin className="h-5 w-5 text-secondary mt-1" />,
                     label: "Address",
-                    value: "TheRedSea Hurghada Elhadaba",
+                    value: "Red Sea, Hurghada, Elhadaba",
                   },
                   {
                     icon: <Clock className="h-5 w-5 text-secondary mt-1" />,

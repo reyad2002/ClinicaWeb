@@ -1,25 +1,41 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React from 'react';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
 
-import EmergencyIcon from '@mui/icons-material/Emergency';
-import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
-import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
-import HealingIcon from '@mui/icons-material/Healing';
-import VaccinesIcon from '@mui/icons-material/Vaccines';
-import BloodtypeIcon from '@mui/icons-material/Bloodtype';
-import BiotechIcon from '@mui/icons-material/Biotech';
-import AddModeratorIcon from '@mui/icons-material/AddModerator';
+import EmergencyIcon from "@mui/icons-material/Emergency";
+import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
+import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
+import HealingIcon from "@mui/icons-material/Healing";
+import VaccinesIcon from "@mui/icons-material/Vaccines";
+import BloodtypeIcon from "@mui/icons-material/Bloodtype";
+import BiotechIcon from "@mui/icons-material/Biotech";
+import AddModeratorIcon from "@mui/icons-material/AddModerator";
 
 const services = [
   { title: "General Consultation", options: 30, Icon: <VaccinesIcon /> },
-  { title: "Telemedicine & Virtual Visits", options: 40, Icon: <BloodtypeIcon /> },
+  {
+    title: "Telemedicine & Virtual Visits",
+    options: 40,
+    Icon: <BloodtypeIcon />,
+  },
   { title: "Nursing & Patient Care", options: 17, Icon: <MonitorHeartIcon /> },
-  { title: "Medical Records & Administration", options: 27, Icon: <MedicalServicesIcon /> },
-  { title: "Diagnostic & Laboratory Services", options: 15, Icon: <BiotechIcon /> },
-  { title: "Pharmacy & Prescription Management", options: 27, Icon: <HealingIcon /> },
+  {
+    title: "Medical Records & Administration",
+    options: 27,
+    Icon: <MedicalServicesIcon />,
+  },
+  {
+    title: "Diagnostic & Laboratory Services",
+    options: 15,
+    Icon: <BiotechIcon />,
+  },
+  {
+    title: "Pharmacy & Prescription Management",
+    options: 27,
+    Icon: <HealingIcon />,
+  },
 ];
 
 export default function ServicesSection() {
@@ -57,17 +73,25 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="group flex flex-col gap-y-2.5 servicesCard p-4 rounded-md shadow-sm border bg-gray-50 hover:shadow-md transition-transform duration-200 hover:scale-105"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              className="group flex flex-col gap-y-2.5 servicesCard p-4 rounded-md shadow-sm border bg-gray-50"
+              // initial={{ opacity: 0, y: 30 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // whileHover={{
+              //   scale: 1.05,
+              //   boxShadow:
+              //     "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              //   transition: { duration: 0.2, ease: "easeOut" },
+              // }}
+              // transition={{ duration: 0.2, ease: "easeOut" }}
+              // viewport={{ once: true, amount: 0.3 }}
             >
               <div className="servicesIcon text-secondary bg-main rounded-full w-12 h-12 flex items-center justify-center">
                 {service.Icon}
               </div>
-              <div className="text-xs font-bold sm:text-lg">{service.title}</div>
-              <div className="text-xs group-hover:text-gray-200 text-gray-500 sm:text-md">
+              <div className="text-xs font-bold sm:text-lg">
+                {service.title}
+              </div>
+              <div className="text-xs text-gray-500 sm:text-md group-hover:text-gray-200 transition-colors duration-200">
                 {service.options} options available
               </div>
             </motion.div>

@@ -1,38 +1,41 @@
-'use client';
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import AddIcCallIcon from '@mui/icons-material/AddIcCall';
-import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+"use client";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import AddIcCallIcon from "@mui/icons-material/AddIcCall";
+import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const carouselSlides = [
   {
-    image: '/p6.jpg',
-    title: 'Home Care for Patients & Families',
-    subtitle: 'Clinica provides top-tier home care services led by professional caregivers. Your comfort and health are our priority.',
+    image: "/p6.jpg",
+    title: "Home Care for Patients & Families",
+    subtitle:
+      "Clinica provides top-tier home care services led by professional caregivers. Your comfort and health are our priority.",
     button: {
-      text: 'Contact Now',
-      href: 'tel:01003472237',
+      text: "Contact Now",
+      href: "tel:01070771668",
     },
   },
   {
-    image: '/p7.jpg',
-    title: 'Expert Medical Team',
-    subtitle: 'Our experienced doctors and nurses are available 24/7 to ensure your well-being at home.',
+    image: "/p7.jpg",
+    title: "Expert Medical Team",
+    subtitle:
+      "Our experienced doctors and nurses are available 24/7 to ensure your well-being at home.",
     button: {
-      text: 'Meet Our Team',
-      href: '#team',
+      text: "Meet Our Team",
+      href: "#team",
     },
   },
   {
-    image: '/p9.jpg',
-    title: 'Comprehensive Services',
-    subtitle: 'From diagnostics to nursing, we offer a full range of home healthcare services tailored to your needs.',
+    image: "/p9.jpg",
+    title: "Comprehensive Services",
+    subtitle:
+      "From diagnostics to nursing, we offer a full range of home healthcare services tailored to your needs.",
     button: {
-      text: 'Our Services',
-      href: '#services',
+      text: "Our Services",
+      href: "#services",
     },
   },
 ];
@@ -41,7 +44,8 @@ const Carousel = () => {
   const [current, setCurrent] = useState(0);
   const timeoutRef = useRef(null);
 
-  const nextSlide = () => setCurrent((prev) => (prev + 1) % carouselSlides.length);
+  const nextSlide = () =>
+    setCurrent((prev) => (prev + 1) % carouselSlides.length);
   const goToSlide = (idx) => setCurrent(idx);
 
   useEffect(() => {
@@ -103,10 +107,10 @@ const Carousel = () => {
         transition={{ delay: 0.5, duration: 0.8 }}
       >
         {[
-          { icon: <CalendarMonthIcon />, label: 'Book an Appointment' },
-          { icon: <AddIcCallIcon />, label: 'Doctor on Call' },
-          { icon: <MonitorHeartIcon />, label: 'Emergency Services' },
-          { icon: <FavoriteBorderIcon />, label: 'Insurance Partners' },
+          { icon: <CalendarMonthIcon />, label: "Book an Appointment" },
+          { icon: <AddIcCallIcon />, label: "Doctor on Call" },
+          { icon: <MonitorHeartIcon />, label: "Emergency Services" },
+          { icon: <FavoriteBorderIcon />, label: "Insurance Partners" },
         ].map((item, idx) => (
           <motion.div
             key={idx}

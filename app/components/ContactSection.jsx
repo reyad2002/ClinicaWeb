@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -19,32 +19,28 @@ const ContactSection = () => {
   };
 
   const handleSubmit = async (e) => {
+    // Handle form submission here
+    // send to my email
     e.preventDefault();
-    const { name, email, number, message } = formData;
 
-    if (!name || !email || !message) {
-      alert("Please fill out all required fields.");
-      return;
-    }
+    console.log("Form data:", formData);
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: JSON.stringify({ name, email, number, message }),
-        headers: { "Content-Type": "application/json" },
-      });
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-      const data = await res.json();
-
-      if (res.ok) {
-        alert(data.message || "Message sent successfully!");
-        setFormData({ name: "", email: "", number: "", message: "" });
-      } else {
-        alert(data.error || "Failed to send message.");
-      }
-    } catch (err) {
-      console.error("Error sending message:", err);
-      alert("An unexpected error occurred.");
+    const result = await res.json();
+    if (result.success) {
+      // Swal.fire({
+      //   title: "email sent",
+      //   icon: "success",
+      //   draggable: true,
+      // });
+      console.log("email sent");
+    } else {
+      console.log("email not sent");
     }
   };
 

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const TeamSection = () => {
   const team = [
@@ -48,7 +48,10 @@ const TeamSection = () => {
   ];
 
   return (
-    <div id="team" className="from-blue-100 to-white TeamSection overflow-hidden">
+    <div
+      id="team"
+      className="from-blue-100 to-white TeamSection overflow-hidden"
+    >
       <motion.section
         className="py-16 lg:w-[80%] w-[80%] md:w-[90%] m-auto bg-gradient-to-b text-center"
         initial={{ opacity: 0, y: 40 }}
@@ -72,18 +75,24 @@ const TeamSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Cras eu dignissim mauris. Duis imperdiet erat sapien, molestie aliquet arcu tincidunt id.
-          Mauris sit amet quam mi. Duis porttitor lectus quis turpis malesuada, eu luctus elit dignissim.
+          Cras eu dignissim mauris. Duis imperdiet erat sapien, molestie aliquet
+          arcu tincidunt id. Mauris sit amet quam mi. Duis porttitor lectus quis
+          turpis malesuada, eu luctus elit dignissim.
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {team.map((member, idx) => (
             <motion.div
               key={idx}
-              className="bg-white border-1 border-main rounded-2xl overflow-hidden p-5 flex flex-col items-center hover:scale-102 shadow-md transition duration-300 transform hover:bg-main group"
+              className="bg-white border-1 border-main rounded-2xl overflow-hidden p-5 flex flex-col items-center shadow-md group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{
+                scale: 1.02,
+                backgroundColor: "#006bb3",
+                transition: { duration: 0.2, ease: "easeOut" },
+              }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <img
@@ -91,10 +100,10 @@ const TeamSection = () => {
                 alt={member.name}
                 className="w-auto object-cover rounded-md mb-4"
               />
-              <h3 className="font-bold text-lg group-hover:text-secondary">
+              <h3 className="font-bold text-lg text-black group-hover:text-secondary transition-colors duration-200">
                 {member.name}
               </h3>
-              <p className="text-gray-600 text-sm group-hover:text-white">
+              <p className="text-gray-600 text-sm group-hover:text-white transition-colors duration-200">
                 {member.title}
               </p>
             </motion.div>
